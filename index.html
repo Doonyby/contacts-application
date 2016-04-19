@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/app.js"></script>
@@ -15,13 +14,14 @@
 		<h1>Contacts</h1>
 		<h2>Add a contact:</h2>
 		<div class="contact-form">
-			<form>
 				<h3>First Name</h3>
 				<input type="text" class="form-control" placeholder="" id="firstName">
 				<h3>Last Name</h3>
 				<input type="text" class="form-control" placeholder="" id="lastName">
-				<h3>Phone Number</h3>
-				<button type="button" class="btn btn-primary">Add Another Phone</button>
+				<span>
+					<h3 id="phone">Phone Number</h3>
+					<button type="button" class="btn btn-primary" id="addphone">Add Another Phone</button>
+				</span>
 				<input type="text" class="form-control" placeholder="" id="phoneNumber">
 				<h3>Street</h3>
 				<input type="text" class="form-control" placeholder="" id="street">
@@ -31,10 +31,10 @@
 				<input type="text" class="form-control" placeholder="" id="state">
 				<button type="button" class="btn btn-primary">Add Another Address</button>
 				<input class="btn btn-default" type="submit" value="Add Contact" id="addButton">
-			</form>
 		</div>
 		<div class="contact-list">
 			<h2>Existing Contacts</h2>
+
 		</div>
 	</div>
 	<div class="col-md-4">

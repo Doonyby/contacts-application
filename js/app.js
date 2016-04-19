@@ -11,10 +11,11 @@ $(document).ready(function () {
 
 	var nameLink = contact.firstName + " " + contact.lastName;
 	$('#addButton').click(function () {
-		$('.contact-list')prepend(nameLink);
+		console.log(nameLink);
+		$('.contact-list').prepend(nameLink);
 	});
 
-	(nameLink).click(function() {
+	$(nameLink).click(function() {
 		$('.contact-display').append(contact);
-	})
+	});
 });

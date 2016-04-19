@@ -1,0 +1,17 @@
+#phone,
+#addphone {
+	display: inline-block;
+}
+
+#addphone {
+	margin-left: 2em;
+	margin-bottom: .5em;
+}
+
+#state {
+	margin-bottom: .5em;
+}
+
+#addButton {
+	margin-left: 1em;
+}
