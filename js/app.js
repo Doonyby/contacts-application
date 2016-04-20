@@ -24,4 +24,17 @@ $(document).ready(function () {
 		$('.contact-display').empty();
 		$('.contact-display').append(contact);
 	});
+	
+	
+	$('#addphone').click(function() {
+		var plusPhone = '<input type="text" class="form-control" placeholder="" id="phoneNumber">';
+		console.log(plusPhone);
+		$('#phone-div').append(plusPhone);
+	});
+
+	
+	//$('#addAddress').click(function() {
+		//var plusAddress =  ;
+		//$('#address-div').append(plusAddress);	
+	//});
 });

@@ -16,21 +16,25 @@
 		<div class="contact-form">
 			<form>
 				<h3>First Name</h3>
-				<input type="text" class="form-control" placeholder="" name="firstName" id="firstName">
+				<input type="text" class="form-control" placeholder="" name="firstName" id="firstName" required>
 				<h3>Last Name</h3>
-				<input type="text" class="form-control" placeholder="" id="lastName">
+				<input type="text" class="form-control" placeholder="" id="lastName" required>
 				<span>
 					<h3 id="phone">Phone Number</h3>
 					<button type="button" class="btn btn-primary" id="addphone">Add Another Phone</button>
 				</span>
-				<input type="text" class="form-control" placeholder="" id="phoneNumber">
+				<div id='phone-div'>
+					<input type="text" class="form-control" placeholder="" id="phoneNumber"required>
+				</div>
 				<h3>Street</h3>
-				<input type="text" class="form-control" placeholder="" id="street">
-				<h3>City</h3>
-				<input type="text" class="form-control" placeholder="" id="city">
-				<h3>State</h3>
-				<input type="text" class="form-control" placeholder="" id="state">
-				<button type="button" class="btn btn-primary">Add Another Address</button>
+				<div id='address-div'>
+					<input type="text" class="form-control" placeholder="" id="street">
+					<h3>City</h3>
+					<input type="text" class="form-control" placeholder="" id="city">
+					<h3>State</h3>
+					<input type="text" class="form-control" placeholder="" id="state">
+				</div>
+				<button type="button" class="btn btn-primary" id="addAddress">Add Another Address</button>
 				<input class="btn btn-default" type="button" value="Add Contact" id="addButton">
 			</form>
 		</div>
@@ -43,7 +47,8 @@
 	</div>
 	<div class="col-md-4">
 		<div class="contact-display">
-			<h2>I'm a contact!</h2>
+			<h2>I'm a contact!
+			</h2>
 		</div>	
 	</div>
 
