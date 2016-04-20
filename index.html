@@ -14,8 +14,9 @@
 		<h1>Contacts</h1>
 		<h2>Add a contact:</h2>
 		<div class="contact-form">
+			<form>
 				<h3>First Name</h3>
-				<input type="text" class="form-control" placeholder="" id="firstName">
+				<input type="text" class="form-control" placeholder="" name="firstName" id="firstName">
 				<h3>Last Name</h3>
 				<input type="text" class="form-control" placeholder="" id="lastName">
 				<span>
@@ -30,11 +31,14 @@
 				<h3>State</h3>
 				<input type="text" class="form-control" placeholder="" id="state">
 				<button type="button" class="btn btn-primary">Add Another Address</button>
-				<input class="btn btn-default" type="submit" value="Add Contact" id="addButton">
+				<input class="btn btn-default" type="button" value="Add Contact" id="addButton">
+			</form>
 		</div>
-		<div class="contact-list">
+		<div>
 			<h2>Existing Contacts</h2>
-
+			<div class="contact-list">
+				
+			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
