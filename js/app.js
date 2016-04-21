@@ -1,50 +1,61 @@
 var contacts = [];
+var numPhoneNumbers = 1;
+var numAddresses = 1;
 
-var Contact = function(firstName, lastName, phoneNumber, street) {
+var Contact = function(firstName, lastName, phoneNumbers, addresses) {
 	this.firstName = firstName;
 	this.lastName = lastName;
-	this.phoneNumber = phoneNumber;
-	this.address = [];
+	this.phoneNumbers = phoneNumbers;
+	this.addresses = addresses;
 };
-
-// var address = {
-// 	street: document.getElementById('street').value,
-// 	city: document.getElementById('city').value,
-// 	state: document.getElementById('state').value,
-// };
-
 
 $(document).ready(function () {
 
-	// var nameLink = contact.firstName + " " + contact.lastName;
-	// $('#addButton').click(function () {
-	// 	console.log(contact.firstName);
-	// 	$('.contact-list').prepend(nameLink);
-	// });
+	function getPhoneNumbers() {
+		var phoneNumbers = [];
+		for (var i=0; i<numPhoneNumbers; i++) {
+			var id = "#phoneNumber" + i;
+			phoneNumbers.push($(id).val());			
+		}
+		return phoneNumbers;
+	}
 
-	// $(nameLink).click(function() {
-	// 	$('.contact-display').empty();
-	// 	$('.contact-display').append(contact);
-	// });
-	
-	
-	// $('#addphone').click(function() {
-	// 	var plusPhone = '<input type="text" class="form-control" placeholder="" id="phoneNumber">';
-	// 	console.log(plusPhone);
-	// 	$('#phone-div').append(plusPhone);
-	// });
+	function getAddresses() {
+		var addresses = [];
+		var address = {};
+		var id = "";
+		for (var i=0; i<numAddresses; i++) {
+			id = "#street" + i;
+			address.street = $(id).val();	
+			id = "#city" + i;
+			address.city = $(id).val();	
+			id = "#state" + i;
+			address.state = $(id).val();		
+			addresses.push(address);
+		}	
+		return addresses;
+	}
+
+ 	function addPhoneNumber() {
+ 					// <input type="text" class="form-control" placeholder="" id="phoneNumber"required>
+ 	}
+
+	function addAddress() {
+					// <input type="text" class="form-control" placeholder="" id="street">
+					// <h3>City</h3>
+					// <input type="text" class="form-control" placeholder="" id="city">
+					// <h3>State</h3>
+					// <input type="text" class="form-control" placeholder="" id="state">
+	}
 
 	$('#addContact').submit(function(event) {
 		event.preventDefault();
 		var firstName = $('#firstName').val();
-		var lastName = $('#lastName').val();
-		var phoneNumber = $('#phoneNumber').val();
-		var street = $('#street').val();						
-		var newContact = new Contact(firstName, lastName, phoneNumber, street);
+		var lastName = $('#lastName').val();	
+		var phoneNumbers = getPhoneNumbers(); 
+		var addresses = getAddresses();					
+		var newContact = new Contact(firstName, lastName, phoneNumbers, addresses);
 		contacts.push(newContact);
-	})
-	//$('#addAddress').click(function() {
-		//var plusAddress =  ;
-		//$('#address-div').append(plusAddress);	
-	//});
+	});
+
 });
