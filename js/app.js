@@ -36,11 +36,14 @@ $(document).ready(function () {
 		return addresses;
 	}
 
- 	function addPhoneNumber() {
- 					// <input type="text" class="form-control" placeholder="" id="phoneNumber"required>
- 	}
+	$('#addPhone').click(function () {
+		var el = '<input type="text" class="form-control" placeholder="" id="phoneNumber' + numPhoneNumbers + '"required>'
+		$('#phone-div').append(el);
+		numPhoneNumbers++;
+	})
 
-	function addAddress() {
+ 	
+	$('#addAddress').click(function ()
 					// <input type="text" class="form-control" placeholder="" id="street">
 					// <h3>City</h3>
 					// <input type="text" class="form-control" placeholder="" id="city">
