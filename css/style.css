@@ -8,10 +8,16 @@
 	margin-bottom: .5em;
 }
 
-#state {
-	margin-bottom: .5em;
-}
 
 #addButton {
 	margin-left: 1em;
+}
+
+#addAddress,
+#addButton {
+	margin-top: 1em;
+}
+
+ul {
+	list-style-type: none;
 }

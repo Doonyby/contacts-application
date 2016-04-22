@@ -37,19 +37,20 @@ $(document).ready(function () {
 	}
 
 	$('#addPhone').click(function () {
-		var el = '<input type="text" class="form-control" placeholder="" id="phoneNumber' + numPhoneNumbers + '"required>'
+		var el = '<h3>Additional Phone Number</h3><input type="text" class="form-control" placeholder="" id="phoneNumber' + numPhoneNumbers + '"required>';
 		$('#phone-div').append(el);
 		numPhoneNumbers++;
 	})
 
  	
-	$('#addAddress').click(function ()
-					// <input type="text" class="form-control" placeholder="" id="street">
-					// <h3>City</h3>
-					// <input type="text" class="form-control" placeholder="" id="city">
-					// <h3>State</h3>
-					// <input type="text" class="form-control" placeholder="" id="state">
-	}
+	$('#addAddress').click(function() {
+		var el = '<h3>Additional Address</h3><h3>Street</h3><input type="text" class="form-control" placeholder="" id="street' + numAddresses + '"><h3>City</h3><input type="text" class="form-control" placeholder="" id="city' + numAddresses + '"><h3>State</h3><input type="text" class="form-control" placeholder="" id="state' + numAddresses + '">';
+		$('#address-div').append(el);
+		numAddresses++;
+	});
+
+	
+
 
 	$('#addContact').submit(function(event) {
 		event.preventDefault();
@@ -59,6 +60,18 @@ $(document).ready(function () {
 		var addresses = getAddresses();					
 		var newContact = new Contact(firstName, lastName, phoneNumbers, addresses);
 		contacts.push(newContact);
+		$('#addContact').find('input[type=text]').val('');
+		for (var i = 0; i < contacts.length; i++) {
+			console.log(contacts[i].firstName);
+			var contactTitle = '<a><li>' + contacts[i].firstName + " " + contacts[i].lastName + '</li></a>';
+			$('.contact-list').append(contactTitle);
+				$('li').click(function() {
+					console.log("clicked");
+					$('.contact-display').append(contacts[i].firstName);
+				});
+		};
+		
 	});
+
 
 });

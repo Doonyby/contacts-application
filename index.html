@@ -10,47 +10,50 @@
 
 </head>
 <body>
-	<div class="col-md-6">
-		<h1>Contacts</h1>
-		<h2>Add a contact:</h2>
-		<div class="contact-form">
-			<form id="addContact">
-				<h3>First Name</h3>
-				<input type="text" class="form-control" placeholder="" name="firstName" id="firstName" required>
-				<h3>Last Name</h3>
-				<input type="text" class="form-control" placeholder="" id="lastName" required>
-				<span>
-					<h3 id="phone">Phone Number</h3>
-					<button type="button" class="btn btn-primary" id="addPhone">Add Another Phone</button>
-				</span>
-				<div id='phone-div'>
-					<input type="text" class="form-control" placeholder="" id="phoneNumber0"required>
+	<div class="container">
+		<div class="col-md-6">
+			<h1>Contacts</h1>
+			<h2>Add a contact:</h2>
+			<div class="contact-form">
+				<form id="addContact">
+					<h3>First Name</h3>
+					<input type="text" class="form-control" placeholder="" name="firstName" id="firstName" required>
+					<h3>Last Name</h3>
+					<input type="text" class="form-control" placeholder="" id="lastName" required>
+					<span>
+						<h3 id="phone">Phone Number</h3>
+						<button type="button" class="btn btn-primary" id="addPhone">Add Another Phone</button>
+					</span>
+					<div id='phone-div'>
+						<input type="text" class="form-control" placeholder="" id="phoneNumber0"required>
+					</div>
+					<h3>Street</h3>
+					<div id='address-div'>
+						<input type="text" class="form-control" placeholder="" id="street0">
+						<h3>City</h3>
+						<input type="text" class="form-control" placeholder="" id="city0">
+						<h3>State</h3>
+						<input type="text" class="form-control" placeholder="" id="state0">
+					</div>
+						<button type="button" class="btn btn-primary" id="addAddress">Add Another Address</button>
+						<input class="btn btn-default" type="submit" value="Add Contact" id="addButton">
+				</form>
+			</div>
+			<div>
+				<h2>Existing Contacts</h2>
+				<div >
+					<ul class="contact-list">
+					
+					</ul>
 				</div>
-				<h3>Street</h3>
-				<div id='address-div'>
-					<input type="text" class="form-control" placeholder="" id="street0">
-					<h3>City</h3>
-					<input type="text" class="form-control" placeholder="" id="city0">
-					<h3>State</h3>
-					<input type="text" class="form-control" placeholder="" id="state0">
-				</div>
-				<button type="button" class="btn btn-primary" id="addAddress">Add Another Address</button>
-				<input class="btn btn-default" type="submit" value="Add Contact" id="addButton">
-			</form>
-		</div>
-		<div>
-			<h2>Existing Contacts</h2>
-			<div class="contact-list">
-				
 			</div>
 		</div>
+		<div class="col-md-4">
+			<h2>Contact Display</h1>
+			<div class="contact-display">
+				
+			</div>	
+		</div>
 	</div>
-	<div class="col-md-4">
-		<div class="contact-display">
-			<h2>I'm a contact!
-			</h2>
-		</div>	
-	</div>
-
 </body>
 </html>
