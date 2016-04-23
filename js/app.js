@@ -62,10 +62,9 @@ $(document).ready(function () {
 		contacts.push(newContact);
 		$('#addContact').find('input[type=text]').val('');
 		for (var i = 0; i < contacts.length; i++) {
-			console.log(contacts[i].firstName);
 			var contactTitle = '<a><li>' + contacts[i].firstName + " " + contacts[i].lastName + '</li></a>';
 			$('.contact-list').append(contactTitle);
-				$('li').click(function() {
+				$('a').click(function() {
 					console.log("clicked");
 					$('.contact-display').append(contacts[i].firstName);
 				});
