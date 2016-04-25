@@ -49,7 +49,13 @@ $(document).ready(function () {
 		numAddresses++;
 	});
 
-	
+	$(document).on("click", ".nameList", function() {
+		var contactNum = parseInt(($(this).find('span').text()));
+		console.log(contacts[contactNum].addresses[contactNum].street);
+		var contactInfo= contacts[contactNum].firstName + " " + contacts[contactNum].lastName + '<br>' + "Phone Number('s): " + contacts[contactNum].phoneNumbers.valueOf() + '<br>' + "Address: " + '<br>' + "Street: " + contacts[contactNum].addresses[contactNum].street + "<br>" + "City: " + contacts[contactNum].addresses[contactNum].city + "<br>" + "State: " + contacts[contactNum].addresses[contactNum].state;
+		$('.contact-display').empty();
+		$('.contact-display').append(contactInfo);
+	});
 
 
 	$('#addContact').submit(function(event) {
@@ -60,14 +66,11 @@ $(document).ready(function () {
 		var addresses = getAddresses();					
 		var newContact = new Contact(firstName, lastName, phoneNumbers, addresses);
 		contacts.push(newContact);
+		$('.contact-list').empty();
 		$('#addContact').find('input[type=text]').val('');
 		for (var i = 0; i < contacts.length; i++) {
-			var contactTitle = '<a><li>' + contacts[i].firstName + " " + contacts[i].lastName + '</li></a>';
+			var contactTitle = '<a><li class= "nameList"><span class="hidden">' + i + '</span>' + contacts[i].firstName + " " + contacts[i].lastName + '</li></a>';
 			$('.contact-list').append(contactTitle);
-				$('a').click(function() {
-					console.log("clicked");
-					$('.contact-display').append(contacts[i].firstName);
-				});
 		};
 		
 	});
