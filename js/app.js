@@ -37,24 +37,54 @@ $(document).ready(function () {
 	}
 
 	$('#addPhone').click(function () {
-		var el = '<h3>Additional Phone Number</h3><input type="text" class="form-control" placeholder="" id="phoneNumber' + numPhoneNumbers + '"required>';
+		var el = '<h3>Additional Phone Number</h3><input type="text" class="form-control" placeholder="" id="phoneNumber' 
+		+ numPhoneNumbers + '"required>';
 		$('#phone-div').append(el);
 		numPhoneNumbers++;
 	})
 
  	
 	$('#addAddress').click(function() {
-		var el = '<h3>Additional Address</h3><h3>Street</h3><input type="text" class="form-control" placeholder="" id="street' + numAddresses + '"><h3>City</h3><input type="text" class="form-control" placeholder="" id="city' + numAddresses + '"><h3>State</h3><input type="text" class="form-control" placeholder="" id="state' + numAddresses + '">';
+		var el = '<h3>Additional Address</h3><h3>Street</h3><input type="text" class="form-control" placeholder="" id="street'
+		 + numAddresses + '"><h3>City</h3><input type="text" class="form-control" placeholder="" id="city' + numAddresses
+		  + '"><h3>State</h3><input type="text" class="form-control" placeholder="" id="state' + numAddresses + '">';
 		$('#address-div').append(el);
 		numAddresses++;
 	});
 
 	$(document).on("click", ".nameList", function() {
 		var contactNum = parseInt(($(this).find('span').text()));
-		console.log(contacts[contactNum].addresses[contactNum].street);
-		var contactInfo= contacts[contactNum].firstName + " " + contacts[contactNum].lastName + '<br>' + "Phone Number('s): " + contacts[contactNum].phoneNumbers.valueOf() + '<br>' + "Address: " + '<br>' + "Street: " + contacts[contactNum].addresses[contactNum].street + "<br>" + "City: " + contacts[contactNum].addresses[contactNum].city + "<br>" + "State: " + contacts[contactNum].addresses[contactNum].state;
+		
+		var contactInfo= contacts[contactNum].firstName + " " + contacts[contactNum].lastName;
 		$('.contact-display').empty();
 		$('.contact-display').append(contactInfo);
+
+		for (var k = 0; k< contacts[contactNum].phoneNumbers.length; k++) {
+			var totalPhone = contacts[contactNum].phoneNumbers[k];
+			if (k === 0) {
+				$('.phone-display').append("Phone: " + totalPhone);
+			}
+			else {
+				$('.phone-display').append('<br>' + "Alternate Phone: " + totalPhone);
+			}
+		};
+
+		for (var j = 0; j < contacts[contactNum].addresses.length; j++) {
+			console.log(j);
+			var totalAddress = contacts[contactNum].addresses[j];
+			console.log(contacts[contactNum].addresses[j]);
+			if (j === 0) {
+				$('.address-display').append("Address: " + '<br>' + "Street: "
+			 + contacts[contactNum].addresses[j].street + "<br>" + "City: " + contacts[contactNum].addresses[j].city
+			  + "<br>" + "State: " + contacts[contactNum].addresses[j].state);
+			}
+			else {
+				$('.address-display').append('<br>' + "Alternate Address: " + '<br>' + "Street: "
+			 + contacts[contactNum].addresses[j].street + "<br>" + "City: " + contacts[contactNum].addresses[j].city
+			  + "<br>" + "State: " + contacts[contactNum].addresses[j].state);
+			}
+		};
+	
 	});
 
 
